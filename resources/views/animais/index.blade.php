@@ -10,19 +10,25 @@
 </p>
 <p>Veja nossa lista de animais para adoção</p>
 
-<table border="1">
-    <tr>
-        <th>Nome</th>
-        <th>Idade</th>
-    </tr>
-
-    @foreach ($animais as $animal)
-    <tr>
-        <td>{{ $animal['nome'] }}</td>
-        <td>{{ $animal['idade'] }}</td>
-        <td><a href="{{ route('animais.apagar', $animal['id']) }}">Apagar</a></td>
-    </tr>
-    @endforeach
-
-</table>
+<div class="bg-white">
+    <table class="min-w-full bg-white">
+        <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Nome</th>
+                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Idade</th>
+                <th class="text-center py-3 px-4 uppercase font-semibold text-sm"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($animais as $animal)
+            <tr>
+                <td  class="w-1/3 text-center py-3 px-4">{{ $animal['nome'] }}</td>
+                <td  class="w-1/3 text-center py-3 px-4">{{ $animal['idade'] }}</td>
+                <td><a href="{{ route('animais.apagar', $animal['id']) }}">Apagar</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+    
+    </table>
+</div>
 @endsection
