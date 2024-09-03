@@ -16,11 +16,13 @@
 </div>  
 @endif
 
-<form method="post" action="{{ route('animais.gravar') }}">
+<form method="post" enctype="multipart/form-data" action="{{ route('animais.gravar') }}">
     @csrf
     <input type="text" name="nome" placeholder="Nome" value="{{ old('nome') }}">
     <br>
     <input type="number" name="idade" placeholder="Idade" value="{{ old('idade') }}">
+    <br>
+    <input type="file" name="imagem" placeholder="Imagem" >
     <br>
     <input type="submit" value="Gravar">
 </form>
