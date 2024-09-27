@@ -44,12 +44,13 @@ return [
             'throw' => false,
         ],
 
-        'imagens'=>[
-            'driver'=> 'local',
+
+        'imagens' => [
+            'driver' => 'local',
             'root' => storage_path('imagens'),
             'url' => env('APP_URL').'/img',
             'visibility' => 'public',
-            'throw'=> false,
+            'throw' => false,
         ],
 
         's3' => [
